@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 
-public class TestSwig : global::System.IDisposable {
+public class FooObject : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal TestSwig(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal FooObject(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TestSwig obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(FooObject obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~TestSwig() {
+  ~FooObject() {
     Dispose();
   }
 
@@ -31,7 +31,7 @@ public class TestSwig : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          swiglibPINVOKE.delete_TestSwig(swigCPtr);
+          swiglibPINVOKE.delete_FooObject(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -39,17 +39,17 @@ public class TestSwig : global::System.IDisposable {
     }
   }
 
-  public static int Add(int a, int b) {
-    int ret = swiglibPINVOKE.TestSwig_Add(a, b);
-    return ret;
+  public int a {
+    set {
+      swiglibPINVOKE.FooObject_a_set(swigCPtr, value);
+    } 
+    get {
+      int ret = swiglibPINVOKE.FooObject_a_get(swigCPtr);
+      return ret;
+    } 
   }
 
-  public int UseFool(FooObject obj) {
-    int ret = swiglibPINVOKE.TestSwig_UseFool(swigCPtr, FooObject.getCPtr(obj));
-    return ret;
-  }
-
-  public TestSwig() : this(swiglibPINVOKE.new_TestSwig(), true) {
+  public FooObject() : this(swiglibPINVOKE.new_FooObject(), true) {
   }
 
 }

@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 
-public class TestSwig : global::System.IDisposable {
+public class BoolPointer : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal TestSwig(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal BoolPointer(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TestSwig obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(BoolPointer obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~TestSwig() {
+  ~BoolPointer() {
     Dispose();
   }
 
@@ -31,7 +31,7 @@ public class TestSwig : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          swiglibPINVOKE.delete_TestSwig(swigCPtr);
+          swiglibPINVOKE.delete_BoolPointer(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -39,17 +39,28 @@ public class TestSwig : global::System.IDisposable {
     }
   }
 
-  public static int Add(int a, int b) {
-    int ret = swiglibPINVOKE.TestSwig_Add(a, b);
+  public BoolPointer() : this(swiglibPINVOKE.new_BoolPointer(), true) {
+  }
+
+  public void assign(bool value) {
+    swiglibPINVOKE.BoolPointer_assign(swigCPtr, value);
+  }
+
+  public bool value() {
+    bool ret = swiglibPINVOKE.BoolPointer_value(swigCPtr);
     return ret;
   }
 
-  public int UseFool(FooObject obj) {
-    int ret = swiglibPINVOKE.TestSwig_UseFool(swigCPtr, FooObject.getCPtr(obj));
+  public SWIGTYPE_p_bool cast() {
+    global::System.IntPtr cPtr = swiglibPINVOKE.BoolPointer_cast(swigCPtr);
+    SWIGTYPE_p_bool ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_bool(cPtr, false);
     return ret;
   }
 
-  public TestSwig() : this(swiglibPINVOKE.new_TestSwig(), true) {
+  public static BoolPointer frompointer(SWIGTYPE_p_bool t) {
+    global::System.IntPtr cPtr = swiglibPINVOKE.BoolPointer_frompointer(SWIGTYPE_p_bool.getCPtr(t));
+    BoolPointer ret = (cPtr == global::System.IntPtr.Zero) ? null : new BoolPointer(cPtr, false);
+    return ret;
   }
 
 }

@@ -7,4 +7,9 @@ namespace SwigLibs
         return a + b;
     }
 
+
+    int TestSwig::UseFool(FooObject* obj)
+    {
+        return obj->a;
+    }
 };

@@ -19,9 +19,15 @@
     <ClCompile Include="..\..\..\src\swig\swiglib_wrap.cxx">
       <Filter>swig</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\test\FooObject.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\test\Test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\FooObject.h">
       <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
