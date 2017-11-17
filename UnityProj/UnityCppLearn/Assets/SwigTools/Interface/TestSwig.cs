@@ -44,12 +44,6 @@ public class TestSwig : global::System.IDisposable {
     return ret;
   }
 
-  public int UseFoo(SWIGTYPE_p_FooObject obj) {
-    int ret = swiglibPINVOKE.TestSwig_UseFoo(swigCPtr, SWIGTYPE_p_FooObject.getCPtr(obj));
-    if (swiglibPINVOKE.SWIGPendingException.Pending) throw swiglibPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
-
   public TestSwig() : this(swiglibPINVOKE.new_TestSwig(), true) {
   }
 

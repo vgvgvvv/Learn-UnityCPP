@@ -190,9 +190,6 @@ class swiglibPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_TestSwig_Add")]
   public static extern int TestSwig_Add(int jarg1, int jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_TestSwig_UseFoo")]
-  public static extern int TestSwig_UseFoo(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
   [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_TestSwig")]
   public static extern global::System.IntPtr new_TestSwig();
 

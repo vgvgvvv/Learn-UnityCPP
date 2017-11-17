@@ -322,26 +322,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TestSwig_Add(int jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TestSwig_UseFoo(void * jarg1, void * jarg2) {
-  int jresult ;
-  SwigLibs::TestSwig *arg1 = (SwigLibs::TestSwig *) 0 ;
-  FooObject arg2 ;
-  FooObject *argp2 ;
-  int result;
-  
-  arg1 = (SwigLibs::TestSwig *)jarg1; 
-  argp2 = (FooObject *)jarg2; 
-  if (!argp2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null FooObject", 0);
-    return 0;
-  }
-  arg2 = *argp2; 
-  result = (int)(arg1)->UseFoo(arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_TestSwig() {
   void * jresult ;
   SwigLibs::TestSwig *result = 0 ;
