@@ -6,4 +6,4 @@
 
 %}
 
-%include "../test/Test.h0"
+%include "../test/Test.h"

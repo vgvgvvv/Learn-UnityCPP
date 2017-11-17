@@ -6,4 +6,5 @@ namespace SwigLibs
     {
         return a + b;
     }
+
 };

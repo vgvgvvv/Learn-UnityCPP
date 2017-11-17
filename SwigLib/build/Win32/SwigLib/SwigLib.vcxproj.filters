@@ -8,9 +8,18 @@
     <Filter Include="test">
       <UniqueIdentifier>{a51c1bd8-3646-49ca-aa71-5454296ee7d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="swig">
+      <UniqueIdentifier>{56f15d98-772a-484e-af08-d9e4684ab1d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\test\Test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\swig\swiglib_wrap.cxx">
+      <Filter>swig</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\test\FooObject.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -18,5 +27,13 @@
     <ClInclude Include="..\..\..\src\test\Test.h">
       <Filter>test</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\test\FooObject.h">
+      <Filter>test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\swig\swiglib.i">
+      <Filter>swig</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

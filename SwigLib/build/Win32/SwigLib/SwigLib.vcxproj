@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,10 +19,34 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\swig\swiglib_wrap.cxx" />
+    <ClCompile Include="..\..\..\src\test\FooObject.cpp" />
     <ClCompile Include="..\..\..\src\test\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\test\FooObject.h" />
     <ClInclude Include="..\..\..\src\test\Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\swig\swiglib.i">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo on
+$(SolutionDir)/../../thirdpart/swigwin-3.0.12/swig.exe -c++ -csharp -outdir  "$(SolutionDir)/../../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface"  "%(FullPath)"
+echo off</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo on
+$(SolutionDir)/../../thirdpart/swigwin-3.0.12/swig.exe -c++ -csharp -outdir  "$(SolutionDir)/../../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface"  "%(FullPath)"
+echo off</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo on
+$(SolutionDir)/../../thirdpart/swigwin-3.0.12/swig.exe -c++ -csharp -outdir  "$(SolutionDir)/../../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface"  "%(FullPath)"
+echo off</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo on
+$(SolutionDir)/../../thirdpart/swigwin-3.0.12/swig.exe -c++ -csharp -outdir  "$(SolutionDir)/../../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface"  "%(FullPath)"
+echo off</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -101,6 +125,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86\$(TargetFileName)
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86\$(TargetName).pdb</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -115,6 +143,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86_64\$(TargetFileName)
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86_64\$(TargetName).pdb</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -133,6 +165,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86\$(TargetFileName)
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86\$(TargetName).pdb</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -151,6 +187,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86_64\$(TargetFileName)
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\..\UnityProj\UnityCppLearn\Assets\Plugins\x86_64\$(TargetName).pdb</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
