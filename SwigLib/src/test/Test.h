@@ -1,6 +1,5 @@
 #ifndef __TEST__
 #define __TEST__
-#include "FooObject.h"
 
 namespace SwigLibs
 {
@@ -8,7 +7,6 @@ namespace SwigLibs
     {
     public:
         static int Add(int a, int b);
-        int UseFoo(FooObject obj);
     };
 }
 
