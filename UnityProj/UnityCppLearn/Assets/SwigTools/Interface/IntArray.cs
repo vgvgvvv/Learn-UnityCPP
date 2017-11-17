@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 
-public class TestSwig : global::System.IDisposable {
+public class IntArray : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal TestSwig(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal IntArray(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TestSwig obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(IntArray obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~TestSwig() {
+  ~IntArray() {
     Dispose();
   }
 
@@ -31,7 +31,7 @@ public class TestSwig : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          swiglibPINVOKE.delete_TestSwig(swigCPtr);
+          swiglibPINVOKE.delete_IntArray(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -39,17 +39,28 @@ public class TestSwig : global::System.IDisposable {
     }
   }
 
-  public static int Add(int a, int b) {
-    int ret = swiglibPINVOKE.TestSwig_Add(a, b);
+  public IntArray(int nelements) : this(swiglibPINVOKE.new_IntArray(nelements), true) {
+  }
+
+  public int getitem(int index) {
+    int ret = swiglibPINVOKE.IntArray_getitem(swigCPtr, index);
     return ret;
   }
 
-  public int UseFool(FooObject obj) {
-    int ret = swiglibPINVOKE.TestSwig_UseFool(swigCPtr, FooObject.getCPtr(obj));
+  public void setitem(int index, int value) {
+    swiglibPINVOKE.IntArray_setitem(swigCPtr, index, value);
+  }
+
+  public SWIGTYPE_p_int cast() {
+    global::System.IntPtr cPtr = swiglibPINVOKE.IntArray_cast(swigCPtr);
+    SWIGTYPE_p_int ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_int(cPtr, false);
     return ret;
   }
 
-  public TestSwig() : this(swiglibPINVOKE.new_TestSwig(), true) {
+  public static IntArray frompointer(SWIGTYPE_p_int t) {
+    global::System.IntPtr cPtr = swiglibPINVOKE.IntArray_frompointer(SWIGTYPE_p_int.getCPtr(t));
+    IntArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new IntArray(cPtr, false);
+    return ret;
   }
 
 }

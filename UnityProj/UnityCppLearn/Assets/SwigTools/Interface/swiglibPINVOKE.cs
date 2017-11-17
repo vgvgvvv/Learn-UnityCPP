@@ -190,9 +190,222 @@ class swiglibPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_TestSwig_Add")]
   public static extern int TestSwig_Add(int jarg1, int jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_TestSwig_UseFool")]
+  public static extern int TestSwig_UseFool(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_TestSwig")]
   public static extern global::System.IntPtr new_TestSwig();
 
   [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_TestSwig")]
   public static extern void delete_TestSwig(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_FooObject_a_set")]
+  public static extern void FooObject_a_set(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_FooObject_a_get")]
+  public static extern int FooObject_a_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_FooObject")]
+  public static extern global::System.IntPtr new_FooObject();
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_FooObject")]
+  public static extern void delete_FooObject(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Clear")]
+  public static extern void BoolVector_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Add")]
+  public static extern void BoolVector_Add(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_size")]
+  public static extern uint BoolVector_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_capacity")]
+  public static extern uint BoolVector_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_reserve")]
+  public static extern void BoolVector_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_BoolVector__SWIG_0")]
+  public static extern global::System.IntPtr new_BoolVector__SWIG_0();
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_BoolVector__SWIG_1")]
+  public static extern global::System.IntPtr new_BoolVector__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_BoolVector__SWIG_2")]
+  public static extern global::System.IntPtr new_BoolVector__SWIG_2(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_getitemcopy")]
+  public static extern bool BoolVector_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_getitem")]
+  public static extern bool BoolVector_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_setitem")]
+  public static extern void BoolVector_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, bool jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_AddRange")]
+  public static extern void BoolVector_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_GetRange")]
+  public static extern global::System.IntPtr BoolVector_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Insert")]
+  public static extern void BoolVector_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, bool jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_InsertRange")]
+  public static extern void BoolVector_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_RemoveAt")]
+  public static extern void BoolVector_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_RemoveRange")]
+  public static extern void BoolVector_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Repeat")]
+  public static extern global::System.IntPtr BoolVector_Repeat(bool jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Reverse__SWIG_0")]
+  public static extern void BoolVector_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Reverse__SWIG_1")]
+  public static extern void BoolVector_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_SetRange")]
+  public static extern void BoolVector_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Contains")]
+  public static extern bool BoolVector_Contains(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_IndexOf")]
+  public static extern int BoolVector_IndexOf(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_LastIndexOf")]
+  public static extern int BoolVector_LastIndexOf(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolVector_Remove")]
+  public static extern bool BoolVector_Remove(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_BoolVector")]
+  public static extern void delete_BoolVector(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Clear")]
+  public static extern void Fooector_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Add")]
+  public static extern void Fooector_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_size")]
+  public static extern uint Fooector_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_capacity")]
+  public static extern uint Fooector_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_reserve")]
+  public static extern void Fooector_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_Fooector__SWIG_0")]
+  public static extern global::System.IntPtr new_Fooector__SWIG_0();
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_Fooector__SWIG_1")]
+  public static extern global::System.IntPtr new_Fooector__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_Fooector__SWIG_2")]
+  public static extern global::System.IntPtr new_Fooector__SWIG_2(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_getitemcopy")]
+  public static extern global::System.IntPtr Fooector_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_getitem")]
+  public static extern global::System.IntPtr Fooector_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_setitem")]
+  public static extern void Fooector_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_AddRange")]
+  public static extern void Fooector_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_GetRange")]
+  public static extern global::System.IntPtr Fooector_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Insert")]
+  public static extern void Fooector_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_InsertRange")]
+  public static extern void Fooector_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_RemoveAt")]
+  public static extern void Fooector_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_RemoveRange")]
+  public static extern void Fooector_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Repeat")]
+  public static extern global::System.IntPtr Fooector_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Reverse__SWIG_0")]
+  public static extern void Fooector_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_Reverse__SWIG_1")]
+  public static extern void Fooector_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_Fooector_SetRange")]
+  public static extern void Fooector_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_Fooector")]
+  public static extern void delete_Fooector(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_BoolPointer")]
+  public static extern global::System.IntPtr new_BoolPointer();
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_BoolPointer")]
+  public static extern void delete_BoolPointer(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolPointer_assign")]
+  public static extern void BoolPointer_assign(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolPointer_value")]
+  public static extern bool BoolPointer_value(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolPointer_cast")]
+  public static extern global::System.IntPtr BoolPointer_cast(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_BoolPointer_frompointer")]
+  public static extern global::System.IntPtr BoolPointer_frompointer(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_UnsignedCharArray")]
+  public static extern global::System.IntPtr new_UnsignedCharArray(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_UnsignedCharArray")]
+  public static extern void delete_UnsignedCharArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_UnsignedCharArray_getitem")]
+  public static extern byte UnsignedCharArray_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_UnsignedCharArray_setitem")]
+  public static extern void UnsignedCharArray_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, byte jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_UnsignedCharArray_cast")]
+  public static extern global::System.IntPtr UnsignedCharArray_cast(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_UnsignedCharArray_frompointer")]
+  public static extern global::System.IntPtr UnsignedCharArray_frompointer(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_new_IntArray")]
+  public static extern global::System.IntPtr new_IntArray(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_delete_IntArray")]
+  public static extern void delete_IntArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_IntArray_getitem")]
+  public static extern int IntArray_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_IntArray_setitem")]
+  public static extern void IntArray_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_IntArray_cast")]
+  public static extern global::System.IntPtr IntArray_cast(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swiglib", EntryPoint="CSharp_IntArray_frompointer")]
+  public static extern global::System.IntPtr IntArray_frompointer(global::System.Runtime.InteropServices.HandleRef jarg1);
 }

@@ -299,10 +299,293 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_swiglib(SWIG_CSharpString
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, msg, ""); return nullreturn; } else
 
 
+#include <typeinfo>
+#include <stdexcept>
+
+
+#include <vector>
+#include <algorithm>
+#include <stdexcept>
+
+
+#include <string>
+
+
 
 #include "../test/Test.h"
+#include "../test/FooObject.h"
 
 
+SWIGINTERN std::vector< bool > *new_std_vector_Sl_bool_Sg___SWIG_2(int capacity){
+        std::vector< bool >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< bool >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN bool std_vector_Sl_bool_Sg__getitemcopy(std::vector< bool > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN bool std_vector_Sl_bool_Sg__getitem(std::vector< bool > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__setitem(std::vector< bool > *self,int index,bool const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__AddRange(std::vector< bool > *self,std::vector< bool > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< bool > *std_vector_Sl_bool_Sg__GetRange(std::vector< bool > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< bool >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__Insert(std::vector< bool > *self,int index,bool const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__InsertRange(std::vector< bool > *self,int index,std::vector< bool > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__RemoveAt(std::vector< bool > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__RemoveRange(std::vector< bool > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< bool > *std_vector_Sl_bool_Sg__Repeat(bool const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< bool >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__Reverse__SWIG_0(std::vector< bool > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__Reverse__SWIG_1(std::vector< bool > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_bool_Sg__SetRange(std::vector< bool > *self,int index,std::vector< bool > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+SWIGINTERN bool std_vector_Sl_bool_Sg__Contains(std::vector< bool > *self,bool const &value){
+        return std::find(self->begin(), self->end(), value) != self->end();
+      }
+SWIGINTERN int std_vector_Sl_bool_Sg__IndexOf(std::vector< bool > *self,bool const &value){
+        int index = -1;
+        std::vector< bool >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end())
+          index = (int)(it - self->begin());
+        return index;
+      }
+SWIGINTERN int std_vector_Sl_bool_Sg__LastIndexOf(std::vector< bool > *self,bool const &value){
+        int index = -1;
+        std::vector< bool >::reverse_iterator rit = std::find(self->rbegin(), self->rend(), value);
+        if (rit != self->rend())
+          index = (int)(self->rend() - 1 - rit);
+        return index;
+      }
+SWIGINTERN bool std_vector_Sl_bool_Sg__Remove(std::vector< bool > *self,bool const &value){
+        std::vector< bool >::iterator it = std::find(self->begin(), self->end(), value);
+        if (it != self->end()) {
+          self->erase(it);
+	  return true;
+        }
+        return false;
+      }
+SWIGINTERN std::vector< FooObject > *new_std_vector_Sl_FooObject_Sg___SWIG_2(int capacity){
+        std::vector< FooObject >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< FooObject >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN FooObject std_vector_Sl_FooObject_Sg__getitemcopy(std::vector< FooObject > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN FooObject const &std_vector_Sl_FooObject_Sg__getitem(std::vector< FooObject > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__setitem(std::vector< FooObject > *self,int index,FooObject const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__AddRange(std::vector< FooObject > *self,std::vector< FooObject > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< FooObject > *std_vector_Sl_FooObject_Sg__GetRange(std::vector< FooObject > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< FooObject >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__Insert(std::vector< FooObject > *self,int index,FooObject const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__InsertRange(std::vector< FooObject > *self,int index,std::vector< FooObject > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__RemoveAt(std::vector< FooObject > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__RemoveRange(std::vector< FooObject > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< FooObject > *std_vector_Sl_FooObject_Sg__Repeat(FooObject const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< FooObject >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__Reverse__SWIG_0(std::vector< FooObject > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__Reverse__SWIG_1(std::vector< FooObject > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_FooObject_Sg__SetRange(std::vector< FooObject > *self,int index,std::vector< FooObject > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
+
+typedef bool BoolPointer;
+
+SWIGINTERN BoolPointer *new_BoolPointer(){
+  return new bool();
+}
+SWIGINTERN void delete_BoolPointer(BoolPointer *self){
+  if (self) delete self;
+}
+SWIGINTERN void BoolPointer_assign(BoolPointer *self,bool value){
+  *self = value;
+}
+SWIGINTERN bool BoolPointer_value(BoolPointer *self){
+  return *self;
+}
+SWIGINTERN bool *BoolPointer_cast(BoolPointer *self){
+  return self;
+}
+SWIGINTERN BoolPointer *BoolPointer_frompointer(bool *t){
+  return (BoolPointer *) t;
+}
+
+typedef unsigned char UnsignedCharArray;
+
+SWIGINTERN UnsignedCharArray *new_UnsignedCharArray(int nelements){
+  return new unsigned char[nelements]();
+}
+SWIGINTERN void delete_UnsignedCharArray(UnsignedCharArray *self){
+  delete [] self;
+}
+SWIGINTERN unsigned char UnsignedCharArray_getitem(UnsignedCharArray *self,int index){
+  return self[index];
+}
+SWIGINTERN void UnsignedCharArray_setitem(UnsignedCharArray *self,int index,unsigned char value){
+  self[index] = value;
+}
+SWIGINTERN unsigned char *UnsignedCharArray_cast(UnsignedCharArray *self){
+  return self;
+}
+SWIGINTERN UnsignedCharArray *UnsignedCharArray_frompointer(unsigned char *t){
+  return (UnsignedCharArray *) t;
+}
+
+typedef int IntArray;
+
+SWIGINTERN IntArray *new_IntArray(int nelements){
+  return new int[nelements]();
+}
+SWIGINTERN void delete_IntArray(IntArray *self){
+  delete [] self;
+}
+SWIGINTERN int IntArray_getitem(IntArray *self,int index){
+  return self[index];
+}
+SWIGINTERN void IntArray_setitem(IntArray *self,int index,int value){
+  self[index] = value;
+}
+SWIGINTERN int *IntArray_cast(IntArray *self){
+  return self;
+}
+SWIGINTERN IntArray *IntArray_frompointer(int *t){
+  return (IntArray *) t;
+}
 
 #ifdef __cplusplus
 extern "C" {
@@ -317,6 +600,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TestSwig_Add(int jarg1, int jarg2) {
   arg1 = (int)jarg1; 
   arg2 = (int)jarg2; 
   result = (int)SwigLibs::TestSwig::Add(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TestSwig_UseFool(void * jarg1, void * jarg2) {
+  int jresult ;
+  SwigLibs::TestSwig *arg1 = (SwigLibs::TestSwig *) 0 ;
+  FooObject *arg2 = (FooObject *) 0 ;
+  int result;
+  
+  arg1 = (SwigLibs::TestSwig *)jarg1; 
+  arg2 = (FooObject *)jarg2; 
+  result = (int)(arg1)->UseFool(arg2);
   jresult = result; 
   return jresult;
 }
@@ -337,6 +634,1066 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_TestSwig(void * jarg1) {
   
   arg1 = (SwigLibs::TestSwig *)jarg1; 
   delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_FooObject_a_set(void * jarg1, int jarg2) {
+  FooObject *arg1 = (FooObject *) 0 ;
+  int arg2 ;
+  
+  arg1 = (FooObject *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->a = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_FooObject_a_get(void * jarg1) {
+  int jresult ;
+  FooObject *arg1 = (FooObject *) 0 ;
+  int result;
+  
+  arg1 = (FooObject *)jarg1; 
+  result = (int) ((arg1)->a);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_FooObject() {
+  void * jresult ;
+  FooObject *result = 0 ;
+  
+  result = (FooObject *)new FooObject();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_FooObject(void * jarg1) {
+  FooObject *arg1 = (FooObject *) 0 ;
+  
+  arg1 = (FooObject *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_Clear(void * jarg1) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_Add(void * jarg1, unsigned int jarg2) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  bool *arg2 = 0 ;
+  bool temp2 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  temp2 = jarg2 ? true : false; 
+  arg2 = &temp2; 
+  (arg1)->push_back((bool const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_BoolVector_size(void * jarg1) {
+  unsigned long jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  std::vector< bool >::size_type result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  result = ((std::vector< bool > const *)arg1)->size();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_BoolVector_capacity(void * jarg1) {
+  unsigned long jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  std::vector< bool >::size_type result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  result = ((std::vector< bool > const *)arg1)->capacity();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_reserve(void * jarg1, unsigned long jarg2) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  std::vector< bool >::size_type arg2 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (std::vector< bool >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_BoolVector__SWIG_0() {
+  void * jresult ;
+  std::vector< bool > *result = 0 ;
+  
+  result = (std::vector< bool > *)new std::vector< bool >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_BoolVector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< bool > *arg1 = 0 ;
+  std::vector< bool > *result = 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< bool > const & type is null", 0);
+    return 0;
+  } 
+  result = (std::vector< bool > *)new std::vector< bool >((std::vector< bool > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_BoolVector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< bool > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< bool > *)new_std_vector_Sl_bool_Sg___SWIG_2(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_BoolVector_getitemcopy(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  bool result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (bool)std_vector_Sl_bool_Sg__getitemcopy(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_BoolVector_getitem(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  bool result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (bool)std_vector_Sl_bool_Sg__getitem(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_setitem(void * jarg1, int jarg2, unsigned int jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  bool *arg3 = 0 ;
+  bool temp3 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = jarg3 ? true : false; 
+  arg3 = &temp3; 
+  try {
+    std_vector_Sl_bool_Sg__setitem(arg1,arg2,(bool const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  std::vector< bool > *arg2 = 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (std::vector< bool > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< bool > const & type is null", 0);
+    return ;
+  } 
+  std_vector_Sl_bool_Sg__AddRange(arg1,(std::vector< bool > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_BoolVector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< bool > *result = 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< bool > *)std_vector_Sl_bool_Sg__GetRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_Insert(void * jarg1, int jarg2, unsigned int jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  bool *arg3 = 0 ;
+  bool temp3 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = jarg3 ? true : false; 
+  arg3 = &temp3; 
+  try {
+    std_vector_Sl_bool_Sg__Insert(arg1,arg2,(bool const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  std::vector< bool > *arg3 = 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< bool > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< bool > const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_bool_Sg__InsertRange(arg1,arg2,(std::vector< bool > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_bool_Sg__RemoveAt(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_bool_Sg__RemoveRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_BoolVector_Repeat(unsigned int jarg1, int jarg2) {
+  void * jresult ;
+  bool *arg1 = 0 ;
+  int arg2 ;
+  bool temp1 ;
+  std::vector< bool > *result = 0 ;
+  
+  temp1 = jarg1 ? true : false; 
+  arg1 = &temp1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< bool > *)std_vector_Sl_bool_Sg__Repeat((bool const &)*arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  std_vector_Sl_bool_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_bool_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolVector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  int arg2 ;
+  std::vector< bool > *arg3 = 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< bool > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< bool > const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_bool_Sg__SetRange(arg1,arg2,(std::vector< bool > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_BoolVector_Contains(void * jarg1, unsigned int jarg2) {
+  unsigned int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  bool *arg2 = 0 ;
+  bool temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  temp2 = jarg2 ? true : false; 
+  arg2 = &temp2; 
+  result = (bool)std_vector_Sl_bool_Sg__Contains(arg1,(bool const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_BoolVector_IndexOf(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  bool *arg2 = 0 ;
+  bool temp2 ;
+  int result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  temp2 = jarg2 ? true : false; 
+  arg2 = &temp2; 
+  result = (int)std_vector_Sl_bool_Sg__IndexOf(arg1,(bool const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_BoolVector_LastIndexOf(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  bool *arg2 = 0 ;
+  bool temp2 ;
+  int result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  temp2 = jarg2 ? true : false; 
+  arg2 = &temp2; 
+  result = (int)std_vector_Sl_bool_Sg__LastIndexOf(arg1,(bool const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_BoolVector_Remove(void * jarg1, unsigned int jarg2) {
+  unsigned int jresult ;
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  bool *arg2 = 0 ;
+  bool temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  temp2 = jarg2 ? true : false; 
+  arg2 = &temp2; 
+  result = (bool)std_vector_Sl_bool_Sg__Remove(arg1,(bool const &)*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_BoolVector(void * jarg1) {
+  std::vector< bool > *arg1 = (std::vector< bool > *) 0 ;
+  
+  arg1 = (std::vector< bool > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_Clear(void * jarg1) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_Add(void * jarg1, void * jarg2) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  FooObject *arg2 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (FooObject *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "FooObject const & type is null", 0);
+    return ;
+  } 
+  (arg1)->push_back((FooObject const &)*arg2);
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Fooector_size(void * jarg1) {
+  unsigned long jresult ;
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  std::vector< FooObject >::size_type result;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  result = ((std::vector< FooObject > const *)arg1)->size();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_Fooector_capacity(void * jarg1) {
+  unsigned long jresult ;
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  std::vector< FooObject >::size_type result;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  result = ((std::vector< FooObject > const *)arg1)->capacity();
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_reserve(void * jarg1, unsigned long jarg2) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  std::vector< FooObject >::size_type arg2 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (std::vector< FooObject >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_Fooector__SWIG_0() {
+  void * jresult ;
+  std::vector< FooObject > *result = 0 ;
+  
+  result = (std::vector< FooObject > *)new std::vector< FooObject >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_Fooector__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< FooObject > *arg1 = 0 ;
+  std::vector< FooObject > *result = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< FooObject > const & type is null", 0);
+    return 0;
+  } 
+  result = (std::vector< FooObject > *)new std::vector< FooObject >((std::vector< FooObject > const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_Fooector__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< FooObject > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  try {
+    result = (std::vector< FooObject > *)new_std_vector_Sl_FooObject_Sg___SWIG_2(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Fooector_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  FooObject result;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = std_vector_Sl_FooObject_Sg__getitemcopy(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = new FooObject((const FooObject &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Fooector_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  FooObject *result = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (FooObject *) &std_vector_Sl_FooObject_Sg__getitem(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  FooObject *arg3 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (FooObject *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "FooObject const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_FooObject_Sg__setitem(arg1,arg2,(FooObject const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_AddRange(void * jarg1, void * jarg2) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  std::vector< FooObject > *arg2 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (std::vector< FooObject > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< FooObject > const & type is null", 0);
+    return ;
+  } 
+  std_vector_Sl_FooObject_Sg__AddRange(arg1,(std::vector< FooObject > const &)*arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Fooector_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< FooObject > *result = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    result = (std::vector< FooObject > *)std_vector_Sl_FooObject_Sg__GetRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  FooObject *arg3 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (FooObject *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "FooObject const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_FooObject_Sg__Insert(arg1,arg2,(FooObject const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  std::vector< FooObject > *arg3 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< FooObject > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< FooObject > const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_FooObject_Sg__InsertRange(arg1,arg2,(std::vector< FooObject > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    std_vector_Sl_FooObject_Sg__RemoveAt(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_FooObject_Sg__RemoveRange(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_Fooector_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  FooObject *arg1 = 0 ;
+  int arg2 ;
+  std::vector< FooObject > *result = 0 ;
+  
+  arg1 = (FooObject *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "FooObject const & type is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  try {
+    result = (std::vector< FooObject > *)std_vector_Sl_FooObject_Sg__Repeat((FooObject const &)*arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_Reverse__SWIG_0(void * jarg1) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  std_vector_Sl_FooObject_Sg__Reverse__SWIG_0(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  try {
+    std_vector_Sl_FooObject_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Fooector_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  int arg2 ;
+  std::vector< FooObject > *arg3 = 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< FooObject > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< FooObject > const & type is null", 0);
+    return ;
+  } 
+  try {
+    std_vector_Sl_FooObject_Sg__SetRange(arg1,arg2,(std::vector< FooObject > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_Fooector(void * jarg1) {
+  std::vector< FooObject > *arg1 = (std::vector< FooObject > *) 0 ;
+  
+  arg1 = (std::vector< FooObject > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_BoolPointer() {
+  void * jresult ;
+  BoolPointer *result = 0 ;
+  
+  result = (BoolPointer *)new_BoolPointer();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_BoolPointer(void * jarg1) {
+  BoolPointer *arg1 = (BoolPointer *) 0 ;
+  
+  arg1 = (BoolPointer *)jarg1; 
+  delete_BoolPointer(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_BoolPointer_assign(void * jarg1, unsigned int jarg2) {
+  BoolPointer *arg1 = (BoolPointer *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (BoolPointer *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  BoolPointer_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_BoolPointer_value(void * jarg1) {
+  unsigned int jresult ;
+  BoolPointer *arg1 = (BoolPointer *) 0 ;
+  bool result;
+  
+  arg1 = (BoolPointer *)jarg1; 
+  result = (bool)BoolPointer_value(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_BoolPointer_cast(void * jarg1) {
+  void * jresult ;
+  BoolPointer *arg1 = (BoolPointer *) 0 ;
+  bool *result = 0 ;
+  
+  arg1 = (BoolPointer *)jarg1; 
+  result = (bool *)BoolPointer_cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_BoolPointer_frompointer(void * jarg1) {
+  void * jresult ;
+  bool *arg1 = (bool *) 0 ;
+  BoolPointer *result = 0 ;
+  
+  arg1 = (bool *)jarg1; 
+  result = (BoolPointer *)BoolPointer_frompointer(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_UnsignedCharArray(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  UnsignedCharArray *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  result = (UnsignedCharArray *)new_UnsignedCharArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_UnsignedCharArray(void * jarg1) {
+  UnsignedCharArray *arg1 = (UnsignedCharArray *) 0 ;
+  
+  arg1 = (UnsignedCharArray *)jarg1; 
+  delete_UnsignedCharArray(arg1);
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_UnsignedCharArray_getitem(void * jarg1, int jarg2) {
+  unsigned char jresult ;
+  UnsignedCharArray *arg1 = (UnsignedCharArray *) 0 ;
+  int arg2 ;
+  unsigned char result;
+  
+  arg1 = (UnsignedCharArray *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = (unsigned char)UnsignedCharArray_getitem(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_UnsignedCharArray_setitem(void * jarg1, int jarg2, unsigned char jarg3) {
+  UnsignedCharArray *arg1 = (UnsignedCharArray *) 0 ;
+  int arg2 ;
+  unsigned char arg3 ;
+  
+  arg1 = (UnsignedCharArray *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (unsigned char)jarg3; 
+  UnsignedCharArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_UnsignedCharArray_cast(void * jarg1) {
+  void * jresult ;
+  UnsignedCharArray *arg1 = (UnsignedCharArray *) 0 ;
+  unsigned char *result = 0 ;
+  
+  arg1 = (UnsignedCharArray *)jarg1; 
+  result = (unsigned char *)UnsignedCharArray_cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_UnsignedCharArray_frompointer(void * jarg1) {
+  void * jresult ;
+  unsigned char *arg1 = (unsigned char *) 0 ;
+  UnsignedCharArray *result = 0 ;
+  
+  arg1 = (unsigned char *)jarg1; 
+  result = (UnsignedCharArray *)UnsignedCharArray_frompointer(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntArray(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  IntArray *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  result = (IntArray *)new_IntArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IntArray(void * jarg1) {
+  IntArray *arg1 = (IntArray *) 0 ;
+  
+  arg1 = (IntArray *)jarg1; 
+  delete_IntArray(arg1);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IntArray_getitem(void * jarg1, int jarg2) {
+  int jresult ;
+  IntArray *arg1 = (IntArray *) 0 ;
+  int arg2 ;
+  int result;
+  
+  arg1 = (IntArray *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = (int)IntArray_getitem(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_setitem(void * jarg1, int jarg2, int jarg3) {
+  IntArray *arg1 = (IntArray *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (IntArray *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  IntArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IntArray_cast(void * jarg1) {
+  void * jresult ;
+  IntArray *arg1 = (IntArray *) 0 ;
+  int *result = 0 ;
+  
+  arg1 = (IntArray *)jarg1; 
+  result = (int *)IntArray_cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IntArray_frompointer(void * jarg1) {
+  void * jresult ;
+  int *arg1 = (int *) 0 ;
+  IntArray *result = 0 ;
+  
+  arg1 = (int *)jarg1; 
+  result = (IntArray *)IntArray_frompointer(arg1);
+  jresult = (void *)result; 
+  return jresult;
 }
 
 
