@@ -1,0 +1,3 @@
+
+SET(MACOSX True)
+SET(APPLE True)
