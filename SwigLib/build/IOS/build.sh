@@ -4,6 +4,7 @@ mkdir build_ios && cd build_ios
 
 cmake \
     -DCMAKE_TOOLCHAIN_FILE=../cmakes/iOS.toolchain.cmake \
+    -GXcode \
     ../../src
 
 cd ..

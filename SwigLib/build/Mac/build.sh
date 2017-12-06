@@ -4,6 +4,7 @@ mkdir build_mac && cd build_mac
 
 cmake \
     -DCMAKE_TOOLCHAIN_FILE=../cmakes/MACOSX.toolchain.cmake \
+    -GXcode \
     ../../src
 
 cd ..
