@@ -1,1 +1,1 @@
-swig -c++ -csharp -outdir "../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface" -o "../src/swig/swiglib_wrap.cxx"
+swig -c++ -csharp -outdir "../../UnityProj/UnityCppLearn/Assets/SwigTools/Interface" -o "../src/swig/swiglib_wrap.cxx" "../src/swig/swiglib.i"
